@@ -1,0 +1,18 @@
+dialog {
+  border: none;
+  width: $screen-sm;
+
+  @each $name, $size in $screens {
+    @if $name != "xs" {
+      &[layout-width="#{$name}"] {
+        width: $size;
+      }
+    }
+  }
+
+  form.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+  }
+}

@@ -1,0 +1,24 @@
+.no-border{
+  border-style: none !important;
+}
+
+.border {
+  border-style: $border-type !important;
+  border-left: $border-size $color-border;
+  border-right: $border-size $color-border;
+  border-top: $border-size $color-border;
+  border-bottom: $border-size $color-border;
+}
+
+.border-left {
+  border-left: $border-settings;
+}
+.border-right {
+  border-right: $border-settings;
+}
+.border-top {
+  border-top: $border-settings;
+}
+.border-bottom {
+  border-bottom: $border-settings;
+}

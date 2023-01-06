@@ -1,0 +1,74 @@
+.input{
+  border-radius: 0px;
+}
+
+.input[type="checkbox"],
+.input[type="radio"] {
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-color: white;
+  margin: 0.0rem;
+  width: 2.0rem;
+  height: 2.0rem;
+  transition: 0.2s;
+  border-radius: $border-rounded;
+  border: $border-settings;
+  padding: 0.3rem;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: $border-rounded;
+    background: $color-light;
+    transition: background 0.4s;
+  }
+  &[type="radio"] {
+    border-radius: 100%;
+    background-color: $color-light;
+    &::after {
+      border-radius: 100%;
+    }
+  }
+  &:checked::after {
+    background: $color-primary;
+  }
+  &.size-lg{
+    width: 3.8rem;
+    height: $component-height;
+  }
+}
+.input[type="checkbox"].switch,
+.input[type="radio"].switch {
+  width: 3.6rem;
+  border-radius: 1.8rem;
+  padding: 0px;
+  background-image: none;
+  &:checked {
+    background: $color-primary;
+  }
+
+  &.size-lg{
+    width: 7.6rem;
+    height: $component-height;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    background: $color-secondary;
+    width: 50%;
+    height: 100%;
+    transition: 0.4s;
+    border-radius: 1.8rem;
+    position: relative;
+  }
+
+  &:checked::after {
+    margin-left: 50%;
+    background: $color-primary-darken;
+  }
+}

@@ -1,0 +1,20 @@
+table{
+  th{
+    text-transform: uppercase;
+  }
+  &.table-hover{
+    tbody tr:nth-child(2n) td{
+      background-color: #0000000a;
+    }
+    tbody tr:hover>{
+      background-color: $color-primary-lighten;
+      td {
+        background-color: $color-primary-lighten;
+      }
+    }
+  }
+
+  &.border > *:last-child > *:last-child > *{
+    border-bottom: none;
+  }
+}

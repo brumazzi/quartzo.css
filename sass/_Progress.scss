@@ -1,0 +1,150 @@
+@keyframes centerOpen {
+  0% {
+    margin-left: 50%;
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  100% {
+    margin-left: 50%;
+    width: 0%;
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    margin-left: 0%;
+    width: 0%;
+  }
+
+  25% {
+    width: 40%;
+    margin-left: 0%;
+  }
+
+  75% {
+    width: 40%;
+    margin-left: 60%;
+  }
+
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
+@keyframes pingPong {
+  0% {
+    margin-left: 0%;
+  }
+
+  50% {
+    margin-left: 60%;
+  }
+}
+
+progress {
+  border: $border-settings;
+  height: $component-height / 2;
+  // background-size: $component-height / 2;
+  &[layout-size="sm"] {
+    height: $component-height / 4;
+    // &::-webkit-progress-bar,
+    // &::-moz-progress-bar {
+    //   background-size: $component-height / 4;
+    // }
+  }
+  &[layout-size="lg"] {
+    height: $component-height;
+    // &::-webkit-progress-bar,
+    // &::-moz-progress-bar {
+    //   background-size: $component-height;
+    // }
+  }
+  appearance: none;
+  overflow: hidden;
+
+  // &:not(:indeterminate) {
+  //   &::-webkit-progress-bar,
+  //   &::-moz-progress-bar {
+  //     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18"><path fill="%23' + str-slice(
+  //         inspect($color-transparent-dark),
+  //         2
+  //       ) + '" d="M0 18 L9 0 18 0 9 18 Z"/></svg>');
+
+  //     background-repeat: repeat;
+  //     // background-position-x: 0%;
+  //   }
+  // }
+
+  &::-webkit-progress-value {
+    background-color: $color-progress-bar;
+  }
+  &::-moz-progress-value {
+    background-color: $color-secondary;
+  }
+  &::-webkit-progress-bar {
+    background-color: #ffffff00;
+  }
+  &::-moz-progress-bar {
+    background-color: $color-progress-bar;
+  }
+
+  @each $name, $color in $colors {
+    &.progress-#{$name} {
+      border-color: darken($color, 20%);
+
+      &::-webkit-progress-value {
+        background-color: $color;
+      }
+      &::-moz-progress-bar {
+        background-color: $color;
+      }
+    }
+  }
+
+  margin-left: 0rem;
+  &:indeterminate {
+    &[animation="center-open"] {
+      &::-webkit-progress-value {
+        animation: centerOpen infinite $animation-duration linear;
+      }
+      &::-moz-progress-value {
+        animation: centerOpen infinite $animation-duration linear;
+      }
+      &::-moz-progress-bar {
+        animation: centerOpen infinite $animation-duration linear;
+      }
+    }
+    &[animation="left-right"] {
+      &::-webkit-progress-value {
+        animation: leftRight infinite $animation-duration linear;
+      }
+      &::-moz-progress-value {
+        animation: leftRight infinite $animation-duration linear;
+      }
+      &::-moz-progress-bar {
+        animation: leftRight infinite $animation-duration linear;
+      }
+    }
+
+    &:not([animation]) {
+      &::-webkit-progress-value {
+        width: 40%;
+        animation: pingPong infinite $animation-duration linear;
+      }
+      &::-moz-progress-value {
+        width: 40%;
+        animation: pingPong infinite $animation-duration linear;
+      }
+      &::-moz-progress-bar {
+        width: 40%;
+        animation: pingPong infinite $animation-duration linear;
+      }
+    }
+  }
+}

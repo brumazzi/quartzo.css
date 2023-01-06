@@ -1,0 +1,87 @@
+.container {
+  margin: 0 auto;
+  padding: 0 0;
+  position: relative;
+  width: 100%;
+  max-width: 92rem;
+  &[size="lg"] {
+    max-width: 172rem;
+  }
+}
+
+.row {
+  width: 100%;
+  & > * {
+    display: block;
+  }
+
+  &:not(.flex) {
+    display: table;
+    &.reverse > * {
+      float: right;
+    }
+    &:not(.reverse) > * {
+      float: left;
+    }
+  }
+
+  &.flex {
+    display: flex;
+    &.wrap {
+      flex-wrap: wrap;
+    }
+
+    @each $name, $direction in $flex-directions {
+      &.flex-#{$name} {
+        flex-direction: $direction;
+      }
+    }
+  }
+
+  @each $name, $contents in $justify-contents {
+    &.justify-contents-#{$name} {
+      justify-content: $contents;
+    }
+  }
+
+  @each $name, $items in $align-items {
+    &.align-items-#{$name} {
+      align-items: $items;
+    }
+  }
+
+  @for $division from 1 to ($grid-division + 1) {
+    .column-#{$division} {
+      width: #{100% / $grid-division * $division};
+    }
+  }
+  @each $screen-name, $screen-size in $screens {
+    @media only screen and (min-width: $screen-size) {
+      @for $division from 1 to ($grid-division + 1) {
+        .column-#{$division}-#{$screen-name} {
+          width: #{100% / $grid-division * $division};
+        }
+      }
+    }
+  }
+
+  &[column-with-space] {
+    & > * {
+      margin: $grid-space;
+    }
+    @for $division from 1 to ($grid-division + 1) {
+      .column-#{$division} {
+        width: calc(#{100% / $grid-division * $division} - #{$grid-space * 2});
+      }
+    }
+    @each $screen-name, $screen-size in $screens {
+      @media only screen and (min-width: $screen-size) {
+        @for $division from 1 to ($grid-division + 1) {
+          .column-#{$division}-#{$screen-name} {
+            width: calc(#{100% / $grid-division * $division} - #{$grid-space * 2});
+          }
+        }
+      }
+    }
+  }
+}

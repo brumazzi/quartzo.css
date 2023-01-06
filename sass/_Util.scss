@@ -1,0 +1,166 @@
+.no-rounded {
+  border-radius: 0px !important;
+}
+
+.rounded {
+  border-radius: $border-rounded !important;
+}
+
+.rounded-2 {
+  border-radius: $border-rounded * 2 !important;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+@each $align in $text-aligns {
+  .text-#{$align} {
+    text-align: $align;
+  }
+}
+
+@each $margin in $margins {
+  .m-#{$margin} {
+    margin: $margin * 0.6rem !important;
+  }
+
+  .mx-#{$margin} {
+    margin-left: $margin * 0.6rem !important;
+    margin-right: $margin * 0.6rem !important;
+  }
+
+  .my-#{$margin} {
+    margin-top: $margin * 0.6rem !important;
+    margin-bottom: $margin * 0.6rem !important;
+  }
+
+  .mt-#{$margin} {
+    margin-top: $margin * 0.6rem !important;
+  }
+
+  .mb-#{$margin} {
+    margin-bottom: $margin * 0.6rem !important;
+  }
+
+  .ml-#{$margin} {
+    margin-left: $margin * 0.6rem !important;
+  }
+
+  .mr-#{$margin} {
+    margin-right: $margin * 0.6rem !important;
+  }
+}
+
+@each $screen-name, $screen-size in $screens {
+  @media only screen and (min-width: $screen-size) {
+    @each $margin in $margins {
+      .m-#{$screen-name}-#{$margin} {
+        margin: $margin * 0.6rem !important;
+      }
+
+      .mx-#{$screen-name}-#{$margin} {
+        margin-left: $margin * 0.6rem !important;
+        margin-right: $margin * 0.6rem !important;
+      }
+
+      .my-#{$screen-name}-#{$margin} {
+        margin-top: $margin * 0.6rem !important;
+        margin-bottom: $margin * 0.6rem !important;
+      }
+
+      .mt-#{$screen-name}-#{$margin} {
+        margin-top: $margin * 0.6rem !important;
+      }
+
+      .mb-#{$screen-name}-#{$margin} {
+        margin-bottom: $margin * 0.6rem !important;
+      }
+
+      .ml-#{$screen-name}-#{$margin} {
+        margin-left: $margin * 0.6rem !important;
+      }
+
+      .mr-#{$screen-name}-#{$margin} {
+        margin-right: $margin * 0.6rem !important;
+      }
+    }
+  }
+}
+
+@each $padding in $paddings {
+  .p-#{$padding} {
+    padding: $padding * 0.6rem !important;
+  }
+
+  .px-#{$padding} {
+    padding-left: $padding * 0.6rem !important;
+    padding-right: $padding * 0.6rem !important;
+  }
+
+  .py-#{$padding} {
+    padding-top: $padding * 0.6rem !important;
+    padding-bottom: $padding * 0.6rem !important;
+  }
+
+  .pt-#{$padding} {
+    padding-top: $padding * 0.6rem !important;
+  }
+
+  .pb-#{$padding} {
+    padding-bottom: $padding * 0.6rem !important;
+  }
+
+  .pl-#{$padding} {
+    padding-left: $padding * 0.6rem !important;
+  }
+
+  .pr-#{$padding} {
+    padding-right: $padding * 0.6rem !important;
+  }
+}
+
+@each $screen-name, $screen-size in $screens {
+  @media only screen and (min-width: $screen-size) {
+    @each $padding in $paddings {
+      .p-#{$screen-name}-#{$padding} {
+        padding: $padding * 0.6rem !important;
+      }
+
+      .px-#{$screen-name}-#{$padding} {
+        padding-left: $padding * 0.6rem !important;
+        padding-right: $padding * 0.6rem !important;
+      }
+
+      .py-#{$screen-name}-#{$padding} {
+        padding-top: $padding * 0.6rem !important;
+        padding-bottom: $padding * 0.6rem !important;
+      }
+
+      .pt-#{$screen-name}-#{$padding} {
+        padding-top: $padding * 0.6rem !important;
+      }
+
+      .pb-#{$screen-name}-#{$padding} {
+        padding-bottom: $padding * 0.6rem !important;
+      }
+
+      .pl-#{$screen-name}-#{$padding} {
+        padding-left: $padding * 0.6rem !important;
+      }
+
+      .pr-#{$screen-name}-#{$padding} {
+        padding-right: $padding * 0.6rem !important;
+      }
+    }
+  }
+}
+
+.shadow {
+  box-shadow: 0 0 10px $color-transparent-dark;
+}
+
+.active{
+  background-color: $color-primary;
+  color: $color-light;
+}

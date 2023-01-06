@@ -1,0 +1,76 @@
+.dropdown {
+  display: block;
+  position: relative;
+  // padding-right: $component-height + $border-size;
+  border: $border-type $border-size $color-border;
+  background-color: $color-initial;
+  height: $component-height;
+
+  summary {
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    list-style: none;
+    line-height: $component-height;
+    &:not(.button) {
+      padding-left: 1rem;
+      // max-width: calc(100% - #{$component-height + 1rem});
+      // border-right: $border-type $border-size $color-border;
+    }
+    height: $component-height - 0.1rem;
+    // border-radius: 0px !important;
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:not(.button) {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30"><path fill="none" d="M10 22 L2 15 L10 8" stroke="%23#{str-slice(inspect($color-quaternary), 2)}" stroke-width="3"/></svg>') center right no-repeat;
+    }
+  }
+
+  &[open] {
+    z-index: $dropdown-z-index;
+
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+
+    & > summary::before {
+      content: "";
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background: transparent;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    & > summary:not(.button) {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30"><path fill="none" d="M2 10 L9 18 L16 10" stroke="%23#{str-slice(inspect($color-quaternary), 2)}" stroke-width="3"/></svg>') center right no-repeat;
+    }
+
+    & > summary:focus {
+      outline: none;
+    }
+
+    & > .content {
+      width: calc(100% + 0.2rem);
+      transform: translateX(-0.1rem);
+      position: absolute;
+      top: calc(100% + 0.1rem);
+      left: 0;
+      margin: 0;
+      box-sizing: border-box;
+      max-height: 200px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      background-color: $color-initial;
+
+      border-top-left-radius: 0px !important;
+      border-top-right-radius: 0px !important;
+
+      border: $border-type $border-size $color-border;
+      border-top: none !important;
+    }
+  }
+}

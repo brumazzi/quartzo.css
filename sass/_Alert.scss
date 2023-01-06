@@ -1,0 +1,14 @@
+.alert {
+  padding: $alert-padding-y $alert-padding-x;
+  border: solid darken($color-muted, 20%) $border-size;
+  color: darken($color-muted, 20%);
+  background-color: lighten($color-muted, 30%);
+  font-weight: $font-weight;
+  @each $name, $color in $colors {
+    &.alert-#{$name} {
+      border: solid darken($color, 20%) $border-size;
+      color: darken($color, 20%);
+      background-color: lighten($color, 30%);
+    }
+  }
+}

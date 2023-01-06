@@ -1,0 +1,171 @@
+// global variants
+$font-weight: 500;
+$font-size: 1.6em;
+$component-height: 3.8rem;
+
+// assets path
+$asset-svg-path: "./svg";
+
+// transition variants
+$transition-duration: 0.4s;
+$animation-duration: 2s;
+
+// screen size
+$screen-xs: 120px;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+$screens: (
+  "xs": $screen-xs,
+  "sm": $screen-sm,
+  "md": $screen-md,
+  "lg": $screen-lg,
+  "xl": $screen-xl,
+);
+
+// size divisions
+$sizes: (10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 100);
+
+// object view display
+$displays: (none, inline, block, table, inline-block, flex);
+
+// grid variants
+
+$grid-division: 12;
+$grid-space: 0.4rem;
+
+$justify-contents: (
+  "center": center,
+  "end": end,
+  "start": start,
+  "between": space-between,
+  "evenly": space-evenly,
+  "around": space-around,
+);
+
+$align-items: (
+  "center": center,
+  "end": flex-end,
+  "start": flex-start,
+  "stretch": stretch,
+);
+
+$flex-directions: (
+  "row": row,
+  "row-reverse": row-reverse,
+  "column": column,
+  "column-reverse": column-reverse,
+);
+
+// $flex-align: (flex-start, flex-end, center, stretch, baseline);
+// $flex-column-align: (flex-start, flex-end, center);
+
+// color variants
+
+$color-initial: #fff !default;
+$color-primary: #6497e4 !default;
+$color-secondary: #606c76 !default;
+$color-tertiary: #f4f5f6 !default;
+$color-quaternary: #d1d1d1 !default;
+$color-quinary: #e1e1e1 !default;
+$color-muted: #959595 !default;
+
+$color-success: #44af7f !default;
+$color-danger: #d45e5e !default;
+$color-warning: #e6ba6a !default;
+$color-info: #78dcf0 !default;
+$color-light: #f8f9fa !default;
+$color-dark: #212529 !default;
+$color-text: #6d6d6d !default;
+
+$color-border: #d0d0d0 !default;
+$color-transparent: #00000000 !default;
+$color-transparent-dark: #00000041 !default;
+$color-progress-bar: #0064b4 !default;
+
+$color-primary-lighten: lighten($color-primary, 25%) !default;
+$color-success-lighten: lighten($color-success, 25%) !default;
+$color-danger-lighten: lighten($color-danger, 25%) !default;
+$color-warning-lighten: lighten($color-warning, 25%) !default;
+$color-info-lighten: lighten($color-info, 25%) !default;
+$color-dark-lighten: lighten($color-dark, 25%) !default;
+
+$color-primary-darken: darken($color-primary, 25%) !default;
+$color-success-darken: darken($color-success, 25%) !default;
+$color-danger-darken: darken($color-danger, 25%) !default;
+$color-warning-darken: darken($color-warning, 25%) !default;
+$color-info-darken: darken($color-info, 25%) !default;
+$color-light-darken: darken($color-light, 25%) !default;
+
+$colors: (
+  "primary" $color-primary,
+  "success" $color-success,
+  "danger" $color-danger,
+  "warning" $color-warning,
+  "info" $color-info,
+  "secondary" $color-secondary,
+  "light" $color-light,
+  "dark" $color-dark,
+  "muted" $color-muted,
+  "tertiary" $color-tertiary,
+  "quaternary" $color-quaternary,
+  "quinary" $color-quinary,
+  "primary-lighten" $color-primary-lighten,
+  "success-lighten" $color-success-lighten,
+  "danger-lighten" $color-danger-lighten,
+  "warning-lighten" $color-warning-lighten,
+  "info-lighten" $color-info-lighten,
+  "primary-darken" $color-primary-darken,
+  "success-darken" $color-success-darken,
+  "danger-darken" $color-danger-darken,
+  "warning-darken" $color-warning-darken,
+  "info-darken" $color-info-darken,
+  "dark-lighten" $color-dark-lighten,
+  "light-darken" $color-light-darken
+);
+
+// Border variants
+
+$border-type: solid;
+$border-size: 0.1rem;
+$border-rounded: 0.4rem;
+$border-settings: $border-type $border-size $color-border;
+
+// button variants
+
+$button-font-size: 0.9rem;
+$button-font-weight: 700;
+$button-letter-spacing: 0.1rem;
+$button-padding-x: 0.6rem;
+$button-padding-y: 1.4rem;
+$button-min-width: 6rem;
+$button-outline-size: 2px;
+$button-outline-type: solid;
+$button-transition-time: 0.2s;
+$button-lighten-scale: 20%;
+
+// alert variants
+$alert-padding-x: 3.2rem;
+$alert-padding-y: 1.2rem;
+
+// badge variants
+
+$badge-padding-x: 0.8rem;
+$badge-padding-y: 0.2rem;
+$badge-font-size: 1.1rem;
+
+// text-align directions
+
+$text-aligns: (left, right, center, justify);
+
+// margin & padding sizes
+
+$margins: (0, 1, 2, 3, 4, 5);
+$paddings: (0, 1, 2, 3, 4, 5);
+
+// z-index proporcions
+
+$dropdown-z-index: 10;
+$navbar-z-index: 20;

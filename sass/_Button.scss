@@ -1,0 +1,64 @@
+.button {
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    &.button-outline {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+  }
+  &:active:not([disabled]) {
+    background-color: lighten($color-primary, $button-lighten-scale);
+    border-color: lighten($color-primary, $button-lighten-scale);
+    color: flip-color(lighten($color-primary, $button-lighten-scale), $color-light, $color-dark);
+    &.button-outline {
+      border-color: $color-primary;
+      color: flip-color($color-primary, $color-primary, $color-light);
+      background-color: $color-primary;
+    }
+  }
+
+  @each $name, $color in $colors {
+    &.button-#{$name} {
+      background-color: $color;
+      color: flip-color($color, $color-dark, $color-light);
+      border-color: $color;
+      &.button-outline {
+        background-color: $color-transparent;
+        color: $color;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: $color;
+        background-color: $color;
+        &.button-outline {
+          background-color: $color-transparent;
+          color: $color;
+        }
+      }
+
+      &:active {
+        background-color: lighten($color, $button-lighten-scale);
+        border-color: lighten($color, $button-lighten-scale);
+        color: flip-color(lighten($color, $button-lighten-scale), $color-light, $color-dark);
+        &.button-outline {
+          border-color: $color;
+          color: flip-color($color, $color, $color-light);
+          background-color: $color;
+        }
+      }
+    }
+  }
+
+  &[disabled] {
+    background-color: $color-muted !important;
+    border-color: $color-muted !important;
+    &.button-outline {
+      background-color: $color-transparent !important;
+      border-color: $color-muted !important;
+      color: $color-muted !important;
+    }
+  }
+}

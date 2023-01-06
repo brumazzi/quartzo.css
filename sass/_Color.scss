@@ -1,0 +1,59 @@
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color !important;
+    color: flip-color($color, $color-light, $color-dark) !important;
+  }
+
+  .bg-hover-#{$name}:hover {
+    background-color: $color !important;
+    color: flip-color($color, $color-light, $color-dark) !important;
+  }
+
+  .fg-#{$name} {
+    color: $color !important;
+  }
+
+  .fg-hover-#{$name}:hover {
+    color: $color !important;
+  }
+
+  .border-#{$name} {
+    border-color: $color !important;
+  }
+
+  .border-hover-#{$name}:hover {
+    border-color: $color !important;
+  }
+}
+
+@each $screen-name, $screen-size in $screens {
+  @each $name, $color in $colors {
+    @media only screen and (min-width: $screen-size) {
+      .bg-#{$name}-#{$screen-name} {
+        background-color: $color !important;
+        color: flip-color($color, $color-light, $color-dark) !important;
+      }
+
+      .bg-hover-#{$name}-#{$screen-name}:hover {
+        background-color: $color !important;
+        color: flip-color($color, $color-light, $color-dark) !important;
+      }
+
+      .fg-#{$name}-#{$screen-name} {
+        color: $color !important;
+      }
+
+      .fg-hover-#{$name}-#{$screen-name}:hover {
+        color: $color !important;
+      }
+
+      .border-#{$name}-#{$screen-name} {
+        border-color: $color !important;
+      }
+
+      .border-hover-#{$name}-#{$screen-name}:hover {
+        border-color: $color !important;
+      }
+    }
+  }
+}

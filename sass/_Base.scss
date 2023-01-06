@@ -1,0 +1,56 @@
+*:not(dialog):not(hr) {
+  margin: 0px;
+}
+
+body[layout-rounded="sm"] {
+  &
+    *:not([type="radio"]):not([type="checkbox"]):not(.switch):not(.row > *):not(.pagination > *):not(table tr):not(table
+      td):not(table th):not(table tbody):not(table thead):not(table tfoot):not(.card .card-footer):not(.card
+      .card-body):not(.card .card-header):not(.card .card-title):not(.card
+      .card-text):not(header):not(main):not(footer):not(.sidebar):not(.row) {
+    border-radius: $border-rounded;
+  }
+}
+
+body[layout-rounded="lg"] {
+  &
+    *:not([type="radio"]):not([type="checkbox"]):not(.switch):not(.row > *):not(.pagination > *):not(table tr):not(table
+      td):not(table th):not(table tbody):not(table thead):not(table tfoot):not(.card .card-footer):not(.card
+      .card-body):not(.card .card-header):not(.card .card-title):not(.card
+      .card-text):not(header):not(main):not(footer):not(.sidebar):not(.row) {
+    border-radius: $border-rounded * 2;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  max-width: 100vw;
+  color: $color-text;
+  overflow: visible;
+  &[layout-transition="true"] *[transitions] {
+    transition-duration: $transition-duration;
+    transition-property: attr(transitions);
+  }
+  &[layout-menu="true"] {
+    @media only screen and (min-width: $screen-md) {
+      padding-left: 10rem;
+      &[layout-menu-direction="right"] {
+        padding-right: 10rem;
+        padding-left: 0rem;
+      }
+    }
+  }
+}
+
+header,
+main,
+footer {
+  display: block;
+  width: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
